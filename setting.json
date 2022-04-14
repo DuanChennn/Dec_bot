@@ -1,0 +1,30 @@
+{
+    "token": "OTY0MDkzMjMwNDA2ODI4MDYz.Ylfnyg.K5Xovuw_QOffG3NI9q9fpCdnBKI",
+    "channel_lobby": "963339062448640030",
+    "channel_test": "964011041925255210",
+    "pic": [
+        "C:\\Users\\User\\Documents\\UnityProject\\discord_bot\\Dec_bot\\Images\\hammer.png",
+        "C:\\Users\\User\\Documents\\UnityProject\\discord_bot\\Dec_bot\\Images\\bingo1.png"
+    ],
+    "url_pic": [
+        "https://imgur.com/gallery/SwxM48b",
+        "https://imgur.com/gallery/brlL45w"
+    ],
+    "bingo": [
+        "https://picsum.photos/200",
+        "https://picsum.photos/500"
+    ],
+    "answer": [
+        "\u6d77\u5e36\u963f\u6d77\u5e36",
+        "\u6d77\u5e36\u963f\u6d77\u5e36~~~"
+    ],
+    "auto_ans": [
+        "\u5beb\u4fe1\u544a\u8a34\u6211\u4eca\u5929\u6d774\u751a\u9ebc\u984f\u8272",
+        "\u6253\u62c9\u642d\u62c9~~"
+    ],
+    "fans": [
+        "\u4f60\u8d85\u68d2\u7684",
+        "\u5929\u963f\u592a\u795e\u5566"
+    ],
+    "alarm_time": "1842"
+}
