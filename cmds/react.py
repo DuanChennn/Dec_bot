@@ -6,7 +6,6 @@ import random
 with open('setting.json',mode ='r',encoding ='utf8') as jFile:
     jdata = json.load(jFile)
    
-
 class React(Cog_Evtension):
      @commands.command()
      async def joke(self,ctx):
