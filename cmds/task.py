@@ -10,6 +10,7 @@ class Task(Cog_Evtension):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
         
+        self.countrer = 0
         # async def interval():
         #     await self.bot.wait_until_ready()
         #     self.channel = self.bot.get_channel(int(jdata["channel_test"]))
@@ -32,8 +33,9 @@ class Task(Cog_Evtension):
             self.channel = self.bot.get_channel(int(jdata["channel_test"]))
             while not self.bot.is_closed():
                 now_time = datetime.datetime.now().strftime("%H%M")
-                if(now_time == jdata["alarm_time"]):
+                if(now_time == jdata["alarm_time"] and self.countrer == 0):
                     await self.channel.send('Go')
+                    self.countrer = 1
                     await asyncio.sleep(1)
                 else:
                     await asyncio.sleep(1)
@@ -49,6 +51,7 @@ class Task(Cog_Evtension):
     
     @commands.command()
     async def set_alarm(self,ctx,time):
+        self.countrer = 0
         jdata['alarm_time'] = time
         with open('setting.json','w',encoding ='utf8') as jwfile:
             json.dump(jdata,jwfile, indent =4)

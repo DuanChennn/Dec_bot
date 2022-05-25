@@ -9,8 +9,8 @@ with open('setting.json',mode ='r',encoding ='utf8') as jFile:
 class React(Cog_Evtension):
      @commands.command()
      async def joke(self,ctx):
-        joke ='客人吃完東西服務生問：那我收囉？客人：好。然後服務生就開始跳舞了'
-        await ctx.send(joke)
+        random_joke = random.choice(jdata['joke'])
+        await ctx.send(random_joke)
 
      @commands.command()
      async def askImage(self,ctx):
@@ -26,7 +26,10 @@ class React(Cog_Evtension):
      @commands.command()
      async def bingo(self,ctx):
         pic = random.choice(jdata['bingo'])
-        await ctx.send(pic)
+        response = 'here you are..'+ pic
+        await ctx.reply(response)
+        #await ctx.send(pic)
+        
 
 
 
