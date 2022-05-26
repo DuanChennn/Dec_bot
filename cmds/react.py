@@ -3,9 +3,10 @@ from discord.ext import commands
 from core.classes import Cog_Evtension
 import json
 import random
+import os
 with open('setting.json',mode ='r',encoding ='utf8') as jFile:
     jdata = json.load(jFile)
-   
+
 class React(Cog_Evtension):
      @commands.command()
      async def joke(self,ctx):
@@ -29,8 +30,47 @@ class React(Cog_Evtension):
         response = 'here you are..'+ pic
         await ctx.reply(response)
         #await ctx.send(pic)
-        
 
+      ###pick up card from local pngs  
+     @commands.command()
+     async def card(self,ctx):
+        random_pic = random.choice(jdata['pic'])
+        pic = discord.File(random_pic)
+        await ctx.reply(file = pic, content ="here you are..")
+        #pic2 = random.choice(jdata['bingo'])
+        #await ctx.reply(content ="here you are.."+pic2)
+
+      ###pick up card from url  
+     @commands.command()
+     async def card2(self,ctx):
+        pic2 = random.choice(jdata['bingo'])
+        await ctx.reply(content ="here you are.."+pic2)
+        #await ctx.reply(content = "test",file = "https://media.discordapp.net/attachments/971770895012089907/972423914854703154/bingo_pic.jpg")
+
+     ###pick up card from url and send out with embed
+     @commands.command()
+     async def Card(self,ctx):
+        pic = random.choice(jdata['bingo'])
+        embed=discord.Embed(title="onitama future teller", url="https://game.onitama.io/", color=0xd43535)
+        #embed.set_author(name="teller", url="https://game.onitama.io/", icon_url="https://picsum.photos/50")
+        embed.set_thumbnail(url=pic)
+        #embed.set_footer(text="now you know what should do")
+        await ctx.reply(embed=embed)
+
+      ###pick up card with relative position 
+     @commands.command()
+     async def GetPic(self,ctx):
+        #C:\Users\User\Documents\UnityProject\discord_bot\Dec_bot\Images\hammer.png
+        pic = open('Images/hammer.png')
+        await ctx.reply(pic)
+        await ctx.reply(file = pic, content ="here you are..")
+
+      ###pick up card with relative position 2
+     @commands.command()
+     async def DeciPlz(self,ctx):
+        pic = random.choice(jdata['relativePng'])
+        response = 'here you are..'+ pic
+        await ctx.reply(response)
 
 
 def setup(bot):

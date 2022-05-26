@@ -10,8 +10,8 @@ class Main(Cog_Evtension):
        
     @commands.command()
     async def profile(self,ctx):
-        embed=discord.Embed(title="onitama content", url="https://game.onitama.io/", description="Im #1 in onitama", color=0xd43535, timestamp = datetime.datetime.now())
-        embed.set_author(name="deci", url="https://game.onitama.io/", icon_url="https://picsum.photos/50")
+        embed=discord.Embed(title="onitama future teller", url="https://game.onitama.io/", description="Im #1 in onitama", color=0xd43535, timestamp = datetime.datetime.now())
+        embed.set_author(name="teller", url="https://game.onitama.io/", icon_url="https://picsum.photos/50")
         embed.set_thumbnail(url="https://picsum.photos/100")
         embed.add_field(name="1", value="1", inline=True)
         embed.add_field(name="d", value="11", inline=True)
@@ -20,10 +20,10 @@ class Main(Cog_Evtension):
         embed.set_footer(text="footer")
         await ctx.send(embed=embed)
 
-    @commands.command()
-    async def whoAmI(self,ctx):
-        await ctx.send(ctx.author)
-        print(datetime.datetime.now().strftime("%H%M"))
+    #@commands.command()
+    #async def whoAmI(self,ctx):
+        #await ctx.send(ctx.author)
+        #print(datetime.datetime.now().strftime("%H%M"))
 
     @commands.command()
     async def repeat(self,ctx,*,msg):
