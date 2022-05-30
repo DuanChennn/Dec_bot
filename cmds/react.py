@@ -59,10 +59,9 @@ class React(Cog_Evtension):
       ###pick up card with relative position 
      @commands.command()
      async def GetPic(self,ctx):
-        #C:\Users\User\Documents\UnityProject\discord_bot\Dec_bot\Images\hammer.png
-        imgPath = os.path.join(os.getcwd(),'Images','hammer.png')
-        #print(imgPath)
-        print(imgPath)
+        value = random.randint(1,2)
+        pngName = "card{index}.png".format(index = value)
+        imgPath = os.path.join(os.getcwd(),'Images',pngName)
         pic = discord.File(imgPath)
         await ctx.reply(file = pic, content ="here you are..")
 
