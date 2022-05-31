@@ -18,6 +18,15 @@ class Event(Cog_Evtension):
              ans = random.choice(jdata["answer"])
              await message.channel.send(ans)
 
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        if message.author == self.bot.user:
+            return
+
+        words =['鴨','呱']
+        if any(word in message.content.lower() for word in words):
+             await message.channel.send("呱~")
+
     
 def setup(bot):
     bot.add_cog(Event(bot))

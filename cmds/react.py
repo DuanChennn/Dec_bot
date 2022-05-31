@@ -59,11 +59,35 @@ class React(Cog_Evtension):
       ###pick up card with relative position 
      @commands.command()
      async def GetPic(self,ctx):
-        value = random.randint(1,2)
+        value = random.randint(1,3)
         pngName = "card{index}.png".format(index = value)
         imgPath = os.path.join(os.getcwd(),'Images',pngName)
         pic = discord.File(imgPath)
         await ctx.reply(file = pic, content ="here you are..")
+
+     @commands.command()
+     async def TestInTestChannel(self,ctx):
+        #964011041925255210
+        if(ctx.channel.name == 'test'):
+         value = random.randint(1,2)
+         pngName = "card{index}.png".format(index = value)
+         imgPath = os.path.join(os.getcwd(),'Images',pngName)
+         pic = discord.File(imgPath)
+         await ctx.reply(file = pic, content ="here you are..")
+        else:
+          await ctx.reply("im in other channnel")
+
+     @commands.command()
+     async def TheAnswer(self,ctx):
+        #channel_talkable
+        if(ctx.channel.id == jdata['channel_talkable']):
+         value = random.randint(1,11)
+         pngName = "card{index}.png".format(index = value)
+         imgPath = os.path.join(os.getcwd(),'Images',pngName)
+         pic = discord.File(imgPath)
+         await ctx.reply(file = pic, content ="here you are..")
+        else:
+          await ctx.reply("im in other channnel")
 
 
 

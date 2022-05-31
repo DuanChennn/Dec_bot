@@ -2,13 +2,14 @@
     "token": "",
     "channel_lobby": "963339062448640030",
     "channel_test": "964011041925255210",
+    "channel_talkable": 980745654345281536,
     "pic": [
         "C:\\Users\\User\\Documents\\UnityProject\\discord_bot\\Dec_bot\\Images\\hammer.png",
         "C:\\Users\\User\\Documents\\UnityProject\\discord_bot\\Dec_bot\\Images\\bingo1.png"
     ],
     "relativePng": [
-        "Images/hammer.png",
-        "Images/bingo1.png"
+        "hammer.png",
+        "bingo1.png"
     ],
     "url_pic": [
         "https://imgur.com/gallery/SwxM48b",
