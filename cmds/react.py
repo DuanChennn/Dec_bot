@@ -81,6 +81,18 @@ class React(Cog_Evtension):
      async def TheAnswer(self,ctx):
         #channel_talkable
         if(ctx.channel.id == jdata['channel_talkable']):
+         value = random.randint(1,47)
+         pngName = "card{index}.jpg".format(index = value)
+         imgPath = os.path.join(os.getcwd(),'Images',pngName)
+         pic = discord.File(imgPath)
+         await ctx.reply(file = pic, content ="here you are..")
+        else:
+          await ctx.reply("im in other channnel")
+
+     @commands.command()
+     async def GuaAnswer(self,ctx):
+        #channel_talkable
+        if(ctx.channel.id == jdata['channel_talkable']):
          value = random.randint(1,11)
          pngName = "card{index}.png".format(index = value)
          imgPath = os.path.join(os.getcwd(),'Images',pngName)
@@ -88,6 +100,7 @@ class React(Cog_Evtension):
          await ctx.reply(file = pic, content ="here you are..")
         else:
           await ctx.reply("im in other channnel")
+     
 
 
 
